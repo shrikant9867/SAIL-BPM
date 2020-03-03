@@ -63,8 +63,10 @@ doc_events = {
 # Installation
 # ------------
 
-# before_install = "sail_bpm.install.before_install"
-# after_install = "sail_bpm.install.after_install"
+fixtures=['Property Setter','Custom Field','Print Format','Role','Print Settings']
+
+
+# before_install = "sail_bpm.install.before_install" after_install = "sail_bpm.install.after_install"
 
 # Desk Notifications
 # ------------------
