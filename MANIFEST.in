@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include sail_bpm *.css
+recursive-include sail_bpm *.csv
+recursive-include sail_bpm *.html
+recursive-include sail_bpm *.ico
+recursive-include sail_bpm *.js
+recursive-include sail_bpm *.json
+recursive-include sail_bpm *.md
+recursive-include sail_bpm *.png
+recursive-include sail_bpm *.py
+recursive-include sail_bpm *.svg
+recursive-include sail_bpm *.txt
+recursive-exclude sail_bpm *.pyc
