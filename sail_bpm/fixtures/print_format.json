@@ -916,5 +916,31 @@
   "raw_printing": 0,
   "show_section_headings": 0,
   "standard": "Yes"
+ },
+  {
+  "align_labels_right": 0,
+  "css": null,
+  "custom_format": 1,
+  "default_print_language": "en",
+  "disabled": 0,
+  "doc_type": "Delivery Note",
+  "docstatus": 0,
+  "doctype": "Print Format",
+  "font": "Default",
+  "format_data": null,
+  "html": "<style>\ntable, th, td {\n  border: 1px solid black;\n  font-size : 8px;\n}\n.headertable{\n    width : 90.5%;\n    margin-left:35px;\n}\n.column {\n  float: left;\n  width: 22%;\n}\n</style>\n{%- set data = get_delivery_note_data(doc) -%}\n<p align=\"center\" style=\"font-size: 25px\"><strong> Delivery Note</strong></p>\n{{data.headertable}}\n{{data.divtable}}",
+  "line_breaks": 0,
+  "modified": "2021-03-31 08:06:04.601609",
+  "module": "Stock",
+  "name": "Delivery Note",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "print_format_builder": 0,
+  "print_format_type": "Jinja",
+  "raw_commands": null,
+  "raw_printing": 0,
+  "show_section_headings": 0,
+  "standard": "No"
  }
 ]
