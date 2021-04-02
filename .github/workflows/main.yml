@@ -21,7 +21,7 @@ jobs:
      runs-on: ubuntu-latest
      steps:
      - name: Syncing Two Repository
-       #uses: appleboy/ssh-action@master
+       uses: actions/checkout@v2
        with:
         run: |
             git clone -b master https://github.com/shrikant9867/SAIL-BPM.git SAIL-BPM;
