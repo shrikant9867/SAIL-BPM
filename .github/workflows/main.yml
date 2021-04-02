@@ -25,6 +25,6 @@ jobs:
     - name: Git-fetch-all
       run: git fetch --all
     - name: Git Another Remote
-      run: git remote add sail-upstream  https://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@github.com/avinashnarvekar/SAIL-Delivey-Note.git
+      run: git remote add sail-upstream  https://shrikant9867:%23%24mh12kc9867%24%23@github.com/avinashnarvekar/SAIL-Delivey-Note.git
     - name: Git-push
       run: git push sail-upstream master
