@@ -3,8 +3,10 @@ name: Auto-Sync CI
 
 
 on:
-  push:
-    branches: [master]
+  schedule: 
+  - cron: "*/1 * * * *" 
+#   push:
+#     branches: [master]
 
 
 
