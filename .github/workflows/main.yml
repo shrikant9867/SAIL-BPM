@@ -23,8 +23,8 @@ jobs:
     - uses: repo-sync/github-sync@v2
       name: Sync repo to branch
       with:
-        run: |
-            git clone -b master https://github.com/shrikant9867/SAIL-BPM.git SAIL-BPM
-            git -C ./SAIL-BPM remote add push-upstream {{ secretes.MAIN_SAIL_BPM }}
-            git -C ./SAIL-BPM push push-upstream master
-            echo "----------------: CODE PUSHED :------------------------------"
+        script: |
+            git clone -b master https://github.com/shrikant9867/SAIL-BPM.git SAIL-BPM;
+            git -C ./SAIL-BPM remote add push-upstream {{ secretes.MAIN_SAIL_BPM }};
+            git -C ./SAIL-BPM push push-upstream master;
+            echo "----------------: CODE PUSHED :------------------------------";
