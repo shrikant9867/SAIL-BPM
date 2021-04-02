@@ -136,3 +136,9 @@ doc_events = {
 # 	"Task": "sail_bpm.task.get_dashboard_data"
 # }
 
+fixtures = [
+{
+        'doctype': 'Print Format',
+        'filters': {'name': ('in', ['Delivery Note'])}
+    }
+    ]
