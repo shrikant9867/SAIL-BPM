@@ -4,20 +4,27 @@ name: Auto Syncing CI
 
 on:
   push:
-    branches: [ master ]
-  workflow_dispatch:
+    branches: [master]
+
+
 
 jobs:
-  repo-sync:
+  
+  build:
+   
     runs-on: ubuntu-latest
+
+    
     steps:
+    
     - uses: actions/checkout@v2
-      with:
-        persist-credentials: false
-    - name: repo-sync
-      uses: repo-sync/github-sync@v2
-      with:
-        source_repo: https://github.com/shrikant9867/SAIL-BPM.git
-        source_branch: master
-        destination_branch: master
-        github_token: ${{ secretes.MAIN_SAIL_BPM }}
+    - name: Git-version
+      run: git version
+    - name: Git-remote-add
+      run: git remote add origin https://github.com/shrikant9867/SAIL-BPM.git
+    - name: Git-fetch-all
+      run: git fetch --all
+    - name: Git Another Remote
+      run: git remote add upstream  https://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@github.com/avinashnarvekar/SAIL-Delivey-Note.git
+    - name: Git-push
+      run: git push upstream master
