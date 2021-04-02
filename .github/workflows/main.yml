@@ -1,30 +1,23 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Auto Syncing CI
 
-# Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ master ]
-#   pull_request:
-#     branches: [ master ]
+  workflow_dispatch:
 
-  # Allows you to run this workflow manually from the Actions tab
-  #
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-     name: Deployment Started on Server
-     runs-on: ubuntu-latest
-     steps:
-     - name: Syncing Two Repository
-       uses: actions/checkout@v2
-       with:
-        run: |
-            git clone -b master https://github.com/shrikant9867/SAIL-BPM.git SAIL-BPM;
-            git -C ./SAIL-BPM remote add push-upstream  https://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@github.com/avinashnarvekar/SAIL-Delivey-Note.git;
-            git -C ./SAIL-BPM push push-upstream master;
-            echo "----------------: CODE PUSHED :------------------------------";
+  repo-sync:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    - name: repo-sync
+      uses: repo-sync/github-sync@v2
+      with:
+        source_repo: https://github.com/shrikant9867/SAIL-BPM.git
+        source_branch: master
+        destination_branch: master
+        github_token: ${{ secretes.MAIN_SAIL_BPM }}
