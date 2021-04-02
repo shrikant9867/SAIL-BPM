@@ -28,9 +28,10 @@ jobs:
          port: 1993
          script: |
            cd /home/dairy/webapps/version-13-beta/frappe-bench/apps/sail_bpm;
+           export GIT_SSL_NO_VERIFY=1;
            git pull --rebase upstream $(git rev-parse --abbrev-ref HEAD);
            cd ../..;
            source ../bin/activate;
-           bench --site test.sail_bpm migrate && bench --site test.sail_bpm build && bench --site test.sail_bpm clear-cache;
+           bench --site test.sail_bpm migrate &> /dev/null  && bench --site test.sail_bpm build  &> /dev/null && bench --site test.sail_bpm clear-cache;
            cd ./apps/sail_bpm;
-           git push push-upstream master
+           git push push-upstream master;
