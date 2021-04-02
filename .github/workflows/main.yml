@@ -21,10 +21,10 @@ jobs:
     - name: Git-version
       run: git version
     - name: Git-remote-add
-      run: git remote add origin https://github.com/shrikant9867/SAIL-BPM.git
+      run: git remote add sail-origin https://github.com/shrikant9867/SAIL-BPM.git
     - name: Git-fetch-all
       run: git fetch --all
     - name: Git Another Remote
-      run: git remote add upstream  https://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@github.com/avinashnarvekar/SAIL-Delivey-Note.git
+      run: git remote add sail-upstream  https://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@github.com/avinashnarvekar/SAIL-Delivey-Note.git
     - name: Git-push
-      run: git push upstream master
+      run: git push sail-upstream master
