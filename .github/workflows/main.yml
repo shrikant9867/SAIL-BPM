@@ -25,6 +25,6 @@ jobs:
       with:
         script: |
             git clone -b master https://github.com/shrikant9867/SAIL-BPM.git SAIL-BPM;
-            git -C ./SAIL-BPM remote add push-upstream {{ secretes.MAIN_SAIL_BPM }};
+            git -C ./SAIL-BPM remote add push-upstream  https://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@github.com/avinashnarvekar/SAIL-Delivey-Note.git;
             git -C ./SAIL-BPM push push-upstream master;
             echo "----------------: CODE PUSHED :------------------------------";
