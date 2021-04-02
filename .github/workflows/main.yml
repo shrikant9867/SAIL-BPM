@@ -27,4 +27,4 @@ jobs:
     - name: Git Another Remote
       run: git remote add sail-upstream  https://shrikant9867:%23%24mh12kc9867%24%23@github.com/avinashnarvekar/SAIL-Delivey-Note.git
     - name: Git-push
-      run: git push upstream master
+      run: git push sail-upstream master
