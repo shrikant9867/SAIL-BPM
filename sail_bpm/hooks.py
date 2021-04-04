@@ -67,9 +67,6 @@ doc_events = {
 # Installation
 # ------------
 
-fixtures = ['Property Setter','Custom Field','Print Format','Role','Print Settings']
-
-
 # before_install = "sail_bpm.install.before_install" after_install = "sail_bpm.install.after_install"
 
 # Desk Notifications
@@ -145,4 +142,4 @@ fixtures = ['Property Setter','Custom Field','Print Format','Role','Print Settin
 fixtures = [{
     'doctype': 'Print Format',
     'filters': {'name': ('in', ['Delivery Note', 'Stock Entry'])}
-}]
+}, "Custom Field", "Property Setter"]
