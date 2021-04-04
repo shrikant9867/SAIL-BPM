@@ -31,14 +31,18 @@ app_license = "MIT"
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 jenv = {
- "methods": ["get_delivery_note_data:sail_bpm.sail_bpm.custom_scripts.jinja_file.jinja_file.get_delivery_note_data" ]} 
-doctype_js = {"Delivery Note" : "sail_bpm/custom_scripts/delivery_note/delivery_note.js"}
+	"methods": ["get_delivery_note_data:sail_bpm.sail_bpm.custom_scripts.jinja_file.jinja_file.get_delivery_note_data"]
+}
+
+doctype_js = {
+	"Delivery Note" : "sail_bpm/custom_scripts/delivery_note/delivery_note.js",
+	"Stock Entry": "sail_bpm/custom_scripts/stock_entry/stock_entry.js"
+}
+
 doc_events = {
-		"Delivery Note":{
+	"Delivery Note": {
 		"validate":"sail_bpm.sail_bpm.custom_scripts.delivery_note.delivery_note.validate"
-	},
-
-
+	}
 }
 # Home Pages
 # ----------
@@ -63,7 +67,7 @@ doc_events = {
 # Installation
 # ------------
 
-fixtures=['Property Setter','Custom Field','Print Format','Role','Print Settings']
+fixtures = ['Property Setter','Custom Field','Print Format','Role','Print Settings']
 
 
 # before_install = "sail_bpm.install.before_install" after_install = "sail_bpm.install.after_install"
@@ -138,9 +142,7 @@ fixtures=['Property Setter','Custom Field','Print Format','Role','Print Settings
 # 	"Task": "sail_bpm.task.get_dashboard_data"
 # }
 
-fixtures = [
-{
-        'doctype': 'Print Format',
-        'filters': {'name': ('in', ['Delivery Note'])}
-    }
-    ]
+fixtures = [{
+    'doctype': 'Print Format',
+    'filters': {'name': ('in', ['Delivery Note', 'Stock Entry'])}
+}]
