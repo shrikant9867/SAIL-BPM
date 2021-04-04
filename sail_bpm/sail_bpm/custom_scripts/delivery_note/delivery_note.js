@@ -92,5 +92,9 @@ frappe.ui.form.on("Delivery Note Item", {
     qty: function(frm, cdt, cdn) {
         var row = locals[cdt][cdn];
         frm.events.calculate_wt_range(frm, row);
+    },
+    wt_range: function(frm, cdt, cdn) {
+        var row = locals[cdt][cdn];
+        frm.events.calculate_wt_range(frm, row);
     }
 })
