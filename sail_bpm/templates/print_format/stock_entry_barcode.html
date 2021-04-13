@@ -14,7 +14,7 @@
 						</div>
 					<div class="barcode_cls br_area">
 						<center>
-							<b style="padding-bottom: 2px; font-size: 14px;">
+							<b style="padding-bottom: 2px; font-size: 17px;">
 								{{ item.item_code }}
 							</b>
 						</center>
@@ -39,23 +39,26 @@
 								jsbarcode-margintop="5"
 								jsbarcode-marginright="15"
 								jsbarcode-marginleft="1"
-								jsbarcode-height="45"
-								jsbarcode-width="2"
-								jsbarcode-fontsize="20"
+								jsbarcode-height="50"
+								jsbarcode-width="3.4"
+								jsbarcode-fontsize="23"
 								jsbarcode-textalign="Center"
 								jsbarcode-value="{{serial_no}}"
 							/>
 						</div>
 					</div>
 					<div class="br_footer">
+						{% set company = frappe.db.get_value("Global Defaults",None,"default_company")  %}
+
+						{% set company_doc = frappe.get_doc("Company", company) %}
 						<b>
 							<small style="color: white">
-								www.sudarshanalluminium.com
+								{{ company_doc.website or 'www.sudarshanalluminium.com' }}
 							</small>
-						</b>&nbsp;&nbsp;
+						</b>&nbsp;&nbsp;&nbsp;&nbsp;
 						<b>
 							<small style="color: white">
-								Email: sail1415@gmail.com
+								Email: {{ company_doc.email or 'info@sudarshanalluminium.com' }}
 							</small>
 						</b>
 					</div>
@@ -115,46 +118,58 @@
 </script>
 <style>
 	.barcode_box {
+		/*fix: 2;
 		width: 4in;
-		height: 3in;
+		height: 3in;*/
+		height: 3.8in;
+		width: 5.3in;
 		border: 2px solid #000;
+	}
+
+	.br_letterhead {
+		padding-top: 7px;
+		text-align: center;
+		background-color: #000;
+		color: #fff !important;
+		height: 0.7in;
+		font-size: 20px;
+		/*fix 2
+		font-size: 16px;
+		height: 0.6in;*/
 	}
 
 	.barcode_cls {
 		text-align: center;
 		background: #0000;
-		height: 2in;
-	}
-
-	.br_letterhead {
-		padding-top: 7px;
-		height: 0.6in;
-		/*width: 4in;*/
-		text-align: center;
-		background-color: #000;
-		color: #fff !important;
-		font-size: 16px;
+		height: 2.6in;
+		/*fix: 2;
+		height: 2in;*/
 	}
 
 	.br_footer {
 		padding-top: 5px;
 		background-color: #000;
 		color: #fff !important;
-		/*height: 0.4in;*/
-		height: 36px;
-		/*width: 4in;*/
+		/*fix :2;
 		font-size: 15px;
+		height: 36px;*/
+		font-size: 16px;
+		height: 46px;
 	}
 
 	.barcode_f {
-		width: 3.4in !important;
 		text-align: center;
+		width: 4.4in !important;
+		margin-left: 0.5in;
+		margin-right: 0.5in;
+		/*fix-2*/
+		/*width: 3.4in !important;
 		margin-left: 0.3in;
-		margin-right: 0.3in;
+		margin-right: 0.3in;*/
 	}
 
 	.item_detail {
-		font-size: 14px;
+		font-size: 16px;
 		padding-top: 5px;
 	}
 
@@ -166,7 +181,10 @@
 	.barcode_cls_nolt {
 		text-align: center;
 		background: #0000;
-		width: 3in;
-		height: 3in;
+		width: 4.2in;
+		height: 3.5in;
+		/*fix 2*/
+		/*width: 3in;
+		height: 3in;*/
 	}
 </style>
