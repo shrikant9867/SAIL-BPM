@@ -1,6 +1,8 @@
+{% set row_idx = frappe.form_dict.idx | int %}
+
 {% if doc.stock_entry_type == "Manufacture" %}
 	{% for item in doc.items %}
-		{% if item.serial_no %}
+		{% if ((item.serial_no) and (item.idx == row_idx or not row_idx)) %}
 			{% set serial_no = item.serial_no.split('\n')[0] %}
 			{% if not no_letterhead  %}
 				<div class="barcode_box">
@@ -68,6 +70,7 @@
 						</b>
 					</div>
 				</div>
+				<div class="page-break"></div>
 			{% else %}
 				<div class="barcode_cls_nolt br_area">
 					<center>
@@ -104,6 +107,7 @@
 						/>
 					</div>
 				</div>
+				<div class="page-break">
 			{% endif %}
 		{% endif %}
 	{% endfor %}
