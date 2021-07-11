@@ -42,6 +42,9 @@ doctype_js = {
 doc_events = {
 	"Delivery Note": {
 		"validate":"sail_bpm.sail_bpm.custom_scripts.delivery_note.delivery_note.validate"
+	},
+	"Stock Entry": {
+		"validate":"sail_bpm.sail_bpm.custom_scripts.stock_entry.stock_entry.process_serial_no"
 	}
 }
 # Home Pages
