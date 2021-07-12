@@ -34,4 +34,4 @@ jobs:
            source ../bin/activate;
            bench --site test.sail_bpm migrate &> /dev/null  && bench --site test.sail_bpm build  &> /dev/null && bench --site test.sail_bpm clear-cache;
            cd ./apps/sail_bpm;
-           git push push-upstream master;
+           git push Sail-bpm-upstream master;
