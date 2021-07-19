@@ -2,8 +2,9 @@
 
 {% if doc.stock_entry_type == "Manufacture" %}
 	{% for item in doc.items %}
-		{% if ((item.serial_no) and (item.idx == row_idx or not row_idx)) %}
-			{% set serial_no = item.serial_no.split('\n')[0] %}
+		{% if ((item.serial_no or item.batch_no) and (item.idx == row_idx or not row_idx)) %}
+			{% set serial_no = item.serial_no.split('\n')[0] if item.serial_no else '' %}
+			{% set batch_no = item.batch_no %}
 			{% if not no_letterhead  %}
 				<div class="barcode_box">
 					<div class="br_letterhead">
@@ -50,7 +51,7 @@
 								jsbarcode-width="3.4"
 								jsbarcode-fontsize="23"
 								jsbarcode-textalign="Center"
-								jsbarcode-value="{{serial_no}}"
+								jsbarcode-value="{{ serial_no or batch_no }}"
 							/>
 						</div>
 					</div>
