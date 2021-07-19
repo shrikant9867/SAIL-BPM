@@ -44,7 +44,8 @@ doc_events = {
 		"validate":"sail_bpm.sail_bpm.custom_scripts.delivery_note.delivery_note.validate"
 	},
 	"Stock Entry": {
-		"validate":"sail_bpm.sail_bpm.custom_scripts.stock_entry.stock_entry.process_serial_no"
+		"after_insert": "sail_bpm.sail_bpm.custom_scripts.stock_entry.stock_entry.make_batches",
+		"validate": "sail_bpm.sail_bpm.custom_scripts.stock_entry.stock_entry.process_serial_no_and_batch_no"
 	}
 }
 # Home Pages
