@@ -81,8 +81,8 @@ def make_batches(doc, method=None, warehouse_field='t_warehouse'):
 					supplier=getattr(doc, 'supplier', None),
 					reference_doctype=doc.doctype,
 					reference_name=doc.name)).insert().name
-				serial_nos = d.serial_no.split("\n")
-				if len(serial_nos):
+				serial_nos = d.serial_no.split("\n") if d.serial_no else []
+				if len(serial_nos) >= 1:
 					frappe.db.set_value("Serial No", {"name": ["in", serial_nos]}, "batch_no", d.batch_no)
 	if method == "after_insert":
 		doc.save(ignore_permissions=True)
