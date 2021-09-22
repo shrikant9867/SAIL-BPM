@@ -20,7 +20,7 @@ def get_delivery_note_data(doc):
 	last_data_aggregate_count =0
 	for i in data_aggregate:
 		last_data_aggregate_count += 1
-		header = add_data(""" <table style ='width :200px'><tbody><tr class='cls_003' style='border: 1px solid black;'><th colspan ='4'  style='text-align:center' ><strong >%s</strong></th></tr>"""%(i[0]),table_height)
+		header = add_data("""<table style ='width :200px'><tbody><tr class='cls_003' style='border: 1px solid black;'><th colspan ='4'  style='text-align:center' ><strong >%s</strong></th></tr>"""%(i[0]),table_height)
 		table_height += 1
 		header += add_data("""<tr ><td><strong>NO</strong></td><td><strong>Wt Range</strong></td><td><strong>Qty</strong></td><td><strong>Gross Wt</strong></td></tr>""",table_height)
 		table_height += 1
@@ -51,13 +51,13 @@ def get_delivery_note_data(doc):
 def add_data(data , num):
 	
 	if num%52 == 0:
-		if ((num // 52)  )%4 ==0 or num ==0:
+		if ((num // 52)) % 4 == 0 or num ==0:
 			if num ==0:
 				return """ <div class='row'> <div class='column' style='margin-left:50px'  >""" + data
 			else:
 				return """ </tbody></table></div></div> <p >&nbsp;</p><div class='row'> <div class='column' style='margin-left:50px'  ><table style ='width :200px'><tbody>""" + data
 		else:
-			return """ </table></tbody></div><div class='column' ><table style ='width :200px'><tbody>""" + data
+			return """ </table></tbody></div><div class='column' style='margin-left:60px'><table style ='width :200px'><tbody>""" + data
 
 	else:
 		return data
