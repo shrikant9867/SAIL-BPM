@@ -57,7 +57,7 @@ def add_data(data , num):
 			else:
 				return """ </tbody></table></div></div> <p >&nbsp;</p><div class='row'> <div class='column' style='margin-left:50px'  ><table style ='width :200px'><tbody>""" + data
 		else:
-			return """ </table></tbody></div><div class='column' ><table style ='width :200px'><tbody>""" + data
+			return """ </table></tbody></div><div class='column' style='margin-left:60px'><table style ='width :200px'><tbody>""" + data
 
 	else:
 		return data
