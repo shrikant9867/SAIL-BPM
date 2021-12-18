@@ -1,7 +1,7 @@
 frappe.ui.form.on("Stock Entry", {
     calculate_wt_range: function(frm, row) {
         if(row.qty > 0 && row.number_of_pieces > 0) {
-            row.wt_range = flt(row.qty / row.number_of_pieces)
+            row.wt_range = flt((row.qty / row.number_of_pieces), 3)
         }
         else {
             row.wt_range = 0
