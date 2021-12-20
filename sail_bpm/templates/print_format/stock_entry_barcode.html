@@ -33,7 +33,9 @@
 							</div>
 							<div class="col-xs-4 detail_block">
 								<b>Wt Range</b><br>
+
 								<b>{{"{:,.3f}".format(item.wt_range) }} {{ item.uom }}</b>
+
 							</div>
 							<div class="col-xs-4 detail_block">
 								<b>No. of Pieces</b><br>
@@ -86,7 +88,7 @@
 						</div>
 						<div class="col-xs-4 detail_block">
 							<b>Wt Range</b><br>
-							<b>{{ item.wt_range }} {{ item.uom }}</b>
+							<b>{{ '%0.3f' % item.wt_range|float }} {{ item.uom }}</b>
 						</div>
 						<div class="col-xs-4 detail_block">
 							<b>No. of Pieces</b><br>
